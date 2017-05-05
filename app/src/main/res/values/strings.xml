@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NutrimosClient</string>
+    <string name="action_settings">Settings</string>
+    <string name="etEmail">Email</string>
+    <string name="etPassword">Password</string>
+    <string name="btnSignUp">Sign Up</string>
+    <string name="btnForgot">Forgot password</string>
+    <string name="btnSignIn">Already registered? Sign In</string>
+</resources>

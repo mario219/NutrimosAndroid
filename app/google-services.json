@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "224902103899",
+    "firebase_url": "https://nutrimos-662cd.firebaseio.com",
+    "project_id": "nutrimos-662cd",
+    "storage_bucket": "nutrimos-662cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224902103899:android:0f578b9ec21e7b2d",
+        "android_client_info": {
+          "package_name": "com.mario219.nutrimosclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224902103899-5the05ue9bu4udnfrgi91mqgn0molgr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCucVHv6MbMikbjiPfTQCPtb_ul1Y47py0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224902103899:android:5b2dbeaa4b4e845d",
+        "android_client_info": {
+          "package_name": "com.mario219.nutrimosandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224902103899-5the05ue9bu4udnfrgi91mqgn0molgr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCucVHv6MbMikbjiPfTQCPtb_ul1Y47py0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
