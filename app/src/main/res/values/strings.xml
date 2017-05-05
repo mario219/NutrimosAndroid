@@ -6,4 +6,8 @@
     <string name="btnSignUp">Sign Up</string>
     <string name="btnForgot">Forgot password</string>
     <string name="btnSignIn">Already registered? Sign In</string>
+    <string name="emailEmpty">Enter email address!</string>
+    <string name="passwordEmpty">Enter password!</string>
+    <string name="passwordtooshort">Password too short, enter minimum 6 characters!</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

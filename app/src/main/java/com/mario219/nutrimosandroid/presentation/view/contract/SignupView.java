@@ -7,6 +7,6 @@ package com.mario219.nutrimosandroid.presentation.view.contract;
 public interface SignupView {
 
     void initializeView();
-    void signup();
+    void onSignupSuccessful(Boolean task);
 
 }
