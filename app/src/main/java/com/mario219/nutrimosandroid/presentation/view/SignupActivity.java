@@ -78,17 +78,16 @@ public class SignupActivity extends AppCompatActivity implements SignupView{
         finish();
     }
 
-
+    //view contract methods
     @Override
     public void onSignupCompleted(Boolean task) {
-        Toast.makeText(SignupActivity.this, "createUserWithEmail:onComplete:" + task, Toast.LENGTH_SHORT).show();
+        Toast.makeText(SignupActivity.this, R.string.auth_completed + " " + task, Toast.LENGTH_SHORT).show();
         progressBar.setVisibility(View.GONE);
     }
 
     @Override
     public void onSignupFailed() {
-        Toast.makeText(SignupActivity.this, "Authentication failed." /* + task.getException() */,
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(SignupActivity.this, R.string.auth_failed, Toast.LENGTH_SHORT).show();
     }
 
     @Override

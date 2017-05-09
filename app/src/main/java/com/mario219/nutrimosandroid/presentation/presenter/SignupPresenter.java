@@ -1,6 +1,8 @@
 package com.mario219.nutrimosandroid.presentation.presenter;
 
+import android.app.Instrumentation;
 import android.support.annotation.NonNull;
+import android.test.InstrumentationTestRunner;
 import android.util.Log;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -9,6 +11,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.mario219.nutrimosandroid.R;
 import com.mario219.nutrimosandroid.presentation.view.contract.SignupView;
+
+import java.util.concurrent.Executor;
 
 
 /**
@@ -25,14 +29,20 @@ public class SignupPresenter {
 
         this.view = view;
         this.auth = FirebaseAuth.getInstance();
-
     }
 
     public void createUser(String email, String password) {
 
         //create user
+        Executor executor = new Executor() {
+            @Override
+            public void execute(@NonNull Runnable command) {
+
+            }
+        };
+
         auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Boolean isSuccessful = task.isSuccessful();
@@ -50,9 +60,5 @@ public class SignupPresenter {
                     }
                 });
     }
+
 }
-
-
-//view.onSignupCompleted(onSuccessfulMessage);
-//view.onSignupFailed();
-//view.onSignupSuccessful();
