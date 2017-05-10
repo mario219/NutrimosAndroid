@@ -32,12 +32,6 @@ public class SignupPresenterTest {
 
     private class MockView implements SignupView {
 
-
-        @Override
-        public void initializeView() {
-
-        }
-
         @Override
         public void onSignupCompleted(Boolean task) {
 

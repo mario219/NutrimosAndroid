@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -18,15 +19,16 @@ import butterknife.OnClick;
 
 public class SignupActivity extends AppCompatActivity implements SignupView{
 
+    private static final String TAG = SignupActivity.class.getSimpleName();
     /**
      * UI
      */
-    @BindView(R.id.etEmail)
-    EditText etEmail;
-    @BindView(R.id.etPassword)
-    EditText etPassword;
-    @BindView(R.id.progressBar)
-    ProgressBar progressBar;
+    @BindView(R.id.etEmail_su)
+    EditText su_tfEmail;
+    @BindView(R.id.etPassword_su)
+    EditText su_tfPassword;
+    @BindView(R.id.progressBar_su)
+    ProgressBar progressBar_su;
 
     /**
      *State
@@ -43,10 +45,10 @@ public class SignupActivity extends AppCompatActivity implements SignupView{
         signupPresenter = new SignupPresenter(this);
     }
 
-    @OnClick(R.id.btnSignUp)
+    @OnClick(R.id.btnSignUp_su)
     public void signup() {
-        String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
+        String email = su_tfEmail.getText().toString().trim();
+        String password = su_tfPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(), R.string.emailEmpty, Toast.LENGTH_SHORT).show();
@@ -63,24 +65,25 @@ public class SignupActivity extends AppCompatActivity implements SignupView{
             return;
         }
 
-        progressBar.setVisibility(View.VISIBLE);
+        progressBar_su.setVisibility(View.VISIBLE);
 
         signupPresenter.createUser(email, password);
     }
 
-    @OnClick(R.id.btnForgot)
+    @OnClick(R.id.btnForgot_su)
     public void forgot(){
         startActivity(new Intent(SignupActivity.this, ForgotActivity.class));
     }
 
-    @OnClick(R.id.btnSignIn)
-    public void signin(){ startActivity(new Intent(SignupActivity.this, SigninActivity.class)); }
+    @OnClick(R.id.btnSignIn_su)
+    public void signin(){ startActivity(new Intent(SignupActivity.this, SigninActivity.class));
+    Log.i(TAG, "Signin");}
 
     //view contract methods
     @Override
     public void onSignupCompleted(Boolean task) {
         Toast.makeText(SignupActivity.this, R.string.auth_completed + " " + task, Toast.LENGTH_SHORT).show();
-        progressBar.setVisibility(View.GONE);
+        progressBar_su.setVisibility(View.GONE);
     }
 
     @Override
@@ -97,7 +100,7 @@ public class SignupActivity extends AppCompatActivity implements SignupView{
     @Override
     protected void onResume() {
         super.onResume();
-        progressBar.setVisibility(View.GONE);
+        progressBar_su.setVisibility(View.GONE);
     }
 
 }

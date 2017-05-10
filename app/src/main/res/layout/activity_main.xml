@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mario219.nutrimosandroid.presentation.view.ForgotActivity">
+    tools:context="com.mario219.nutrimosandroid.presentation.view.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HOLAAAA"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="141dp" />
+        android:text="MAIN"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="85dp" />
+
 </android.support.constraint.ConstraintLayout>

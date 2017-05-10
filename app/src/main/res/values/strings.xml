@@ -11,7 +11,7 @@
     <string name="passwordtooshort">Password too short, enter minimum 6 characters!</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_signup">Sign Up</string>
-    <string name="auth_failed">Autentication failed:</string>
+    <string name="auth_failed">Autentication failed</string>
     <string name="auth_completed">\"createUserWithEmail:onComplete: \"</string>
     <string name="btn_login">LOGIN</string>
 </resources>
