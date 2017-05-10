@@ -29,25 +29,18 @@ public class SignupPresenter {
 
         this.view = view;
         this.auth = FirebaseAuth.getInstance();
+
     }
 
     public void createUser(String email, String password) {
 
         //create user
-        Executor executor = new Executor() {
-            @Override
-            public void execute(@NonNull Runnable command) {
-
-            }
-        };
-
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Boolean isSuccessful = task.isSuccessful();
                         view.onSignupCompleted(isSuccessful);
-
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
@@ -59,6 +52,7 @@ public class SignupPresenter {
                         }
                     }
                 });
+
     }
 
 }

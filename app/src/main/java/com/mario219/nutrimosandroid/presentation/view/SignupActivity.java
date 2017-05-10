@@ -74,9 +74,7 @@ public class SignupActivity extends AppCompatActivity implements SignupView{
     }
 
     @OnClick(R.id.btnSignIn)
-    public void signin(){
-        finish();
-    }
+    public void signin(){ startActivity(new Intent(SignupActivity.this, SigninActivity.class)); }
 
     //view contract methods
     @Override
@@ -92,7 +90,7 @@ public class SignupActivity extends AppCompatActivity implements SignupView{
 
     @Override
     public void onSignupSuccessful() {
-        startActivity(new Intent(SignupActivity.this, MainActivity.class));
+        startActivity(new Intent(SignupActivity.this, SigninActivity.class));
         finish();
     }
 

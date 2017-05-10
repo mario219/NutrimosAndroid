@@ -21,11 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".presentation.view.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".presentation.view.ForgotActivity"></activity>
+        <activity android:name=".presentation.view.ForgotActivity" />
+        <activity android:name=".presentation.view.SigninActivity"></activity>
     </application>
 
 </manifest>
