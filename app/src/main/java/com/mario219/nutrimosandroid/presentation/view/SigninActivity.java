@@ -22,9 +22,9 @@ public class SigninActivity extends AppCompatActivity implements SigninView {
     /**
      * UI
      */
-    @BindView(R.id.si_etEmail)
+    @BindView(R.id.etEmail_si)
     EditText si_tfEmail;
-    @BindView(R.id.si_etPassword)
+    @BindView(R.id.etPassword_si)
     EditText si_tfPassword;
     @BindView(R.id.progressBar_si)
     ProgressBar progressBar_si;

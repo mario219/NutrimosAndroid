@@ -14,4 +14,14 @@
     <string name="auth_failed">Autentication failed</string>
     <string name="auth_completed">\"createUserWithEmail:onComplete: \"</string>
     <string name="btn_login">LOGIN</string>
+    <string name="lbl_forgot_password">Forgot password?</string>
+    <string name="forgot_password_msg">We just need your registered email to send you password reset instructions</string>
+    <string name="btn_reset_password">RESET PASSWORD</string>
+    <string name="btn_back">BACK</string>
+    <string name="reset_successful_message">We have sent you instructions to reset your password!</string>
+    <string name="reset_failed_message">Failed to send reset email!</string>
+    <string name="btnSend">SEND RESET EMAIL</string>
+    <string name="btnSignOut">SIGN OUT</string>
+    <string name="emailSent">Email sent!</string>
+    <string name="emailNotSent">Failed to send reset email!</string>
 </resources>
