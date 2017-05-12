@@ -76,6 +76,7 @@ public class SigninActivity extends AppCompatActivity implements SigninView {
     @OnClick(R.id.btnSignUp_si)
     public void signup(){
         startActivity(new Intent(SigninActivity.this, SignupActivity.class));
+        finish();
     }
 
     //View contract methods

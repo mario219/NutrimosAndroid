@@ -21,9 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.view.ForgotActivity" />
-        <activity android:name=".presentation.view.SigninActivity" />
-        <activity android:name=".presentation.view.MainActivity"></activity>
+        <activity
+            android:name=".presentation.view.ForgotActivity"
+            android:label="Forgot" />
+        <activity
+            android:name=".presentation.view.SigninActivity"
+            android:label="Sign In" />
+        <activity
+            android:name=".presentation.view.MainActivity"
+            android:label="Nutrimos" />
     </application>
 
 </manifest>

@@ -46,7 +46,8 @@ public class MainPresenter {
     public void signOutCurrentUser(){
 
         auth.signOut();
-
+        view.signOutUser();
+        
         // this listener will be called when there is change in firebase user session
         FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
             @Override

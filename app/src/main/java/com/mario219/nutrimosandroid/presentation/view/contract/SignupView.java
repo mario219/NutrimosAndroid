@@ -6,8 +6,9 @@ package com.mario219.nutrimosandroid.presentation.view.contract;
 
 public interface SignupView {
 
+    void loadCurrentUser();
     void onSignupCompleted(Boolean task);
-    void onSignupFailed();
+    void onSignupFailed(String exception);
     void onSignupSuccessful();
 
 }

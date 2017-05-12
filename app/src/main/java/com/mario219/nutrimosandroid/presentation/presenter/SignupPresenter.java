@@ -9,6 +9,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.mario219.nutrimosandroid.R;
 import com.mario219.nutrimosandroid.presentation.view.contract.SignupView;
 
@@ -29,7 +30,8 @@ public class SignupPresenter {
 
         this.view = view;
         this.auth = FirebaseAuth.getInstance();
-
+        if (auth.getCurrentUser() != null)
+            view.loadCurrentUser();
     }
 
     public void createUser(String email, String password) {
@@ -46,7 +48,7 @@ public class SignupPresenter {
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.i(TAG, R.string.auth_failed + " " + task.getException());
-                            view.onSignupFailed();
+                            view.onSignupFailed(task.getException().toString());
                         } else {
                             view.onSignupSuccessful();
                         }

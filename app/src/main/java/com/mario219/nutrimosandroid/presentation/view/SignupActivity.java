@@ -76,19 +76,27 @@ public class SignupActivity extends AppCompatActivity implements SignupView{
     }
 
     @OnClick(R.id.btnSignIn_su)
-    public void signin(){ startActivity(new Intent(SignupActivity.this, SigninActivity.class));
-    Log.i(TAG, "Signin");}
+    public void signin(){
+        startActivity(new Intent(SignupActivity.this, SigninActivity.class));
+        finish();
+    }
+
 
     //view contract methods
     @Override
+    public void loadCurrentUser() {
+        startActivity(new Intent(SignupActivity.this, MainActivity.class));
+        finish();
+    }
+
+    @Override
     public void onSignupCompleted(Boolean task) {
-        Toast.makeText(SignupActivity.this, R.string.auth_completed + " " + task, Toast.LENGTH_SHORT).show();
         progressBar_su.setVisibility(View.GONE);
     }
 
     @Override
-    public void onSignupFailed() {
-        Toast.makeText(SignupActivity.this, R.string.auth_failed, Toast.LENGTH_SHORT).show();
+    public void onSignupFailed(String exception) {
+        Toast.makeText(SignupActivity.this, R.string.auth_failed + " " + exception, Toast.LENGTH_SHORT).show();
     }
 
     @Override
