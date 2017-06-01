@@ -44,6 +44,18 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/main_btnSubscribe"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/btn_subscribe"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
             android:id="@+id/main_btnSignOut"
             style="?android:textAppearanceSmall"
             android:layout_width="match_parent"

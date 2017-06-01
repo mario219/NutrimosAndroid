@@ -41,6 +41,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        // [START handle_data_extras]
+        if (getIntent().getExtras() != null) {
+            for (String key : getIntent().getExtras().keySet()) {
+                Object value = getIntent().getExtras().get(key);
+                Log.d(TAG, "Key: " + key + " Value: " + value);
+            }
+        }
         mainPresenter = new MainPresenter(this);
     }
 
@@ -62,6 +69,12 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mainPresenter.signOutCurrentUser();
     }
 
+    @OnClick(R.id.main_btnSubscribe)
+    public void subscribeToTopic(){
+        mainPresenter.subscribeTopic();
+    }
+
+
     //View contract methods
 
     @Override
@@ -80,6 +93,10 @@ public class MainActivity extends AppCompatActivity implements MainView {
     public void signOutUser() {
         startActivity(new Intent(MainActivity.this, SigninActivity.class));
         finish();
-        Log.i(TAG, "here");
+    }
+
+    @Override
+    public void subscribe() {
+        Toast.makeText(MainActivity.this, R.string.subscription_successful, Toast.LENGTH_SHORT).show();
     }
 }

@@ -74,6 +74,10 @@ dependencies {
 
     // Google Sign In SDK (only required for Google Sign In)
     compile 'com.google.android.gms:play-services-auth:10.2.1'
+
+    // Firebase gcm
+    compile 'com.google.firebase:firebase-messaging:10.2.1'
+    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
     
     // Firebase UI
     // Used in FirebaseUIActivity. The FirebaseUI-Android library has a minSdk level of 16

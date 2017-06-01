@@ -24,4 +24,7 @@
     <string name="btnSignOut">SIGN OUT</string>
     <string name="emailSent">Email sent!</string>
     <string name="emailNotSent">Failed to send reset email!</string>
+    <string name="btn_subscribe">SUBSCRIBE!</string>
+    <string name="subscription_successful">Subscription successful!</string>
+
 </resources>

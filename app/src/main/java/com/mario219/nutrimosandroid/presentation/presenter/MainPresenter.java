@@ -7,6 +7,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mario219.nutrimosandroid.presentation.view.contract.MainView;
 
 
@@ -25,6 +26,7 @@ public class MainPresenter {
 
         this.view = view;
         auth = FirebaseAuth.getInstance();
+
     }
 
     public void changePassword(String email) {
@@ -62,5 +64,10 @@ public class MainPresenter {
             }
         };
 
+    }
+
+    public void subscribeTopic() {
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        view.subscribe();
     }
 }

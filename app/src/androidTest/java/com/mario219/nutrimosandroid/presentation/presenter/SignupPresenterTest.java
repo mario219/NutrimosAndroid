@@ -32,13 +32,19 @@ public class SignupPresenterTest {
 
     private class MockView implements SignupView {
 
+
+        @Override
+        public void loadCurrentUser() {
+
+        }
+
         @Override
         public void onSignupCompleted(Boolean task) {
 
         }
 
         @Override
-        public void onSignupFailed() {
+        public void onSignupFailed(String exception) {
 
         }
 

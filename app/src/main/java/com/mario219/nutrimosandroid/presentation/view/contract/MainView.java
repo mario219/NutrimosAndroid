@@ -9,4 +9,5 @@ public interface MainView {
     void emailsent();
     void failure();
     void signOutUser();
+    void subscribe();
 }
