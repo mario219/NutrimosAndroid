@@ -1,4 +1,4 @@
-package com.mario219.nutrimosandroid.util;
+package com.mario219.nutrimosandroid.notifications;
 
 import android.util.Log;
 

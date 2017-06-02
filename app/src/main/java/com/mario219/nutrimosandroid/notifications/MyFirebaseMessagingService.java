@@ -1,4 +1,4 @@
-package com.mario219.nutrimosandroid.util;
+package com.mario219.nutrimosandroid.notifications;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -36,23 +36,24 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
         Log.d(TAG, "From: " + remoteMessage.getFrom());
 
-        // Check if message contains a data payload.
-        //if (remoteMessage.getData().size() > 0) {
-        //    Log.i(TAG, "Message data payload: " + remoteMessage.getData());
+        //Check if message contains a data payload.
+        if (remoteMessage.getData().size() > 0) {
+            Log.i(TAG, "Message data payload: " + remoteMessage.getData());
 
-        //    if (/* Check if data needs to be processed by long running job */ true) {
+            if (/* Check if data needs to be processed by long running job */ true) {
                 // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
-        //        scheduleJob();
-        //    } else {
+                scheduleJob();
+            } else {
                 // Handle message within 10 seconds
-        //        handleNow();
-        //    }
+                handleNow();
+            }
 
-        //}
+        }
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.i(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+            createNotification(remoteMessage.getNotification().getBody());
         }
 
         // Also if you intend on generating your own notifications as a result of a received FCM
@@ -78,6 +79,27 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .build();
         dispatcher.schedule(myJob);
         // [END dispatch_job]
+    }
+
+    private void createNotification(String messageBody) {
+        Intent intent = new Intent(this , MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent resultIntent = PendingIntent.getActivity( this , 0, intent,
+                PendingIntent.FLAG_ONE_SHOT);
+
+        Uri notificationSoundURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder mNotificationBuilder = new NotificationCompat.Builder( this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle("Notification Nutrimos")
+                .setContentText(messageBody)
+                .setAutoCancel(true)
+                .setSound(notificationSoundURI)
+                .setContentIntent(resultIntent);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationManager.notify(0, mNotificationBuilder.build());
     }
 
     /**
